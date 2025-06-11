@@ -6,7 +6,7 @@ class Location {
 
   String locationMessage = "尚未取得位置";
 
-  Future getCurrentLocation() async {
+  void getCurrentLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
 

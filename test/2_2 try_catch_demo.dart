@@ -9,19 +9,18 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     String myMargin = 'abc';
-    double? myMarginAsDouble;
 
     try {
-      myMarginAsDouble = double.parse(myMargin);
+      return Scaffold(
+        body: Container(
+          margin: EdgeInsets.all(double.parse(myMargin)),
+          color: Colors.red,
+        ),
+      );
     } catch (e) {
-      print(e);
+      return Scaffold(
+        body: Container(margin: EdgeInsets.all(30), color: Colors.red),
+      );
     }
-
-    return Scaffold(
-      body: Container(
-        margin: EdgeInsets.all(myMarginAsDouble ?? 30.0),
-        color: Colors.red,
-      ),
-    );
   }
 }
